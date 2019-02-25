@@ -8,12 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ReactiveFormsModule,FormsModule  } from '@angular/forms';
 
 const routes:Routes =[
   {path:'', redirectTo:'home' , pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'signin', component:SigninComponent},
   {path:'signup', component:SignupComponent},
+  {path:'profile', component:ProfileComponent},
 ]
 
 @NgModule({
@@ -22,12 +25,16 @@ const routes:Routes =[
     NavbarComponent,
     HomeComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      RouterModule.forRoot(routes) ,
+     FormsModule,
+     ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
